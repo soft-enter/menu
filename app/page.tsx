@@ -1,9 +1,10 @@
+import { Menu } from "./components/Menu";
 
 
 export default function Page() {
   return (
     <div>
-      <h1>Hola Mundo witn next</h1>
+      <Menu />
     </div>
   );
 }
