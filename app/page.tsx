@@ -1,9 +1,8 @@
 import { Menu } from "./components/Menu";
 
-
 export default function Page() {
   return (
-    <div>
+    <div className="bg-zinc-100 h-screen">
       <Menu />
     </div>
   );
