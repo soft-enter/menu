@@ -11,7 +11,7 @@ import {
 
 export const Menu = () => {
   return (
-    <div className="flex justify-between items-center p-5 text-white bg-cyan-400">
+    <div className="flex justify-between items-center p-5 text-white">
       <div className="flex gap-4">
         <Image
           className="rounded"
@@ -23,10 +23,10 @@ export const Menu = () => {
         <p className="font-bold">Adrian Tropical</p>
       </div>
       <div className="flex items-center space-x-4 mr-10">
-        <Link href="#inicio" className="hover:underline">
+        <Link href="/start" className="hover:underline">
           Inicio
         </Link>
-        <Link href="/nosotros" className="hover:underline">
+        <Link href="/we" className="hover:underline">
           Nosotros
         </Link>
         <Link href="#carta" className="hover:underline">
