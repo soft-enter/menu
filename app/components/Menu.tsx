@@ -11,7 +11,7 @@ import {
 
 export const Menu = () => {
   return (
-    <div className="flex justify-between items-center p-5 text-white bg-cyan-400">
+    <div className="flex justify-between items-center p-5 text-white">
       <div className="flex gap-4">
         <Image
           className="rounded"
