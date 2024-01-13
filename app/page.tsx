@@ -1,9 +1,9 @@
-
+import { Menu } from "./components/Menu";
 
 export default function Page() {
   return (
-    <div>
-      <h1>Hola Mundo witn next</h1>
+    <div className="bg-zinc-100 h-screen">
+      <Menu />
     </div>
   );
 }
