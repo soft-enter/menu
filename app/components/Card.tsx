@@ -5,7 +5,7 @@ export function Card() {
         <div className="md:flex-shrink-0"></div>
         <div className="p-8">
           <h1 className="block mt-1 text-lg leading-tight font-medium text-black">
-            Malecon
+            Malecon Center
           </h1>
           <p className="mt-2 text-gray-500">
             Av. 27 de Febrero #429 esq. Núñez de Cáceres, Quisqueya, El Millón
