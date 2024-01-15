@@ -23,16 +23,16 @@ export const Menu = () => {
         <p className="font-bold">Adrian Tropical</p>
       </div>
       <div className="flex items-center space-x-4 mr-10">
-        <Link href="/start" className="hover:underline">
+        <Link href="/" className="hover:underline">
           Inicio
         </Link>
         <Link href="/we" className="hover:underline">
           Nosotros
         </Link>
-        <Link href="#carta" className="hover:underline">
+        <Link href="/card" className="hover:underline">
           Carta
         </Link>
-        <Link href="#contacto" className="hover:underline">
+        <Link href="/contact" className="hover:underline">
           Contacto
         </Link>
         <Link href="#facebook" className="hover:underline">
