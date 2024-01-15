@@ -9,9 +9,15 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-export const Menu = () => {
+export const Menu = ({ showBackGround }: { showBackGround: boolean }) => {
   return (
-    <div className="flex justify-between items-center p-5 text-white fixed w-full bg-red-600 z-30">
+    <div
+      className={
+        showBackGround
+          ? "flex justify-between items-center p-5 text-white fixed w-full bg-red-600 z-30"
+          : "flex justify-between items-center p-5 text-white  fixed w-full  z-30"
+      }
+    >
       <div className="flex gap-4 ">
         <Image
           className="rounded  "
@@ -20,7 +26,7 @@ export const Menu = () => {
           width={50}
           height={50}
         />
-        <p className="font-bold">Adrian Tropical</p>
+        <p className="font-bold text-white ">Adrian Tropical</p>
       </div>
       <div className="flex items-center space-x-4 mr-10">
         <Link href="/" className="hover:underline font-bold">

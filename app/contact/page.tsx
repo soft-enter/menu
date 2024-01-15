@@ -12,7 +12,7 @@ export default function Page() {
           height: "12vh",
         }}
       >
-        <Menu />
+        <Menu showBackGround={true} />
       </div>
       <div style={{ height: "100vh" }}>
         <div

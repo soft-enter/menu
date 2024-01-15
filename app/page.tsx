@@ -17,7 +17,7 @@ export default function Page() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <Menu />
+        <Menu showBackGround={false} />
       </div>
       <div className="grid grid-cols-1 " style={{ height: "85vh" }}>
         <div
