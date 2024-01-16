@@ -2,6 +2,14 @@
 const nextConfig = {
   images: {
     domains: ["localhost"],
+    // remotePatterns: [
+    //   {
+    //     protocol: "https",
+    //     hostname: "assets.example.com",
+    //     port: "",
+    //     pathname: "/account123/**",
+    //   },
+    // ],
   },
   webpack: (config) => {
     config.resolve.alias.canvas = false;

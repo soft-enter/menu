@@ -14,8 +14,8 @@ export const Menu = ({ showBackGround }: { showBackGround: boolean }) => {
     <div
       className={
         showBackGround
-          ? "flex justify-between items-center p-5 text-white fixed w-full bg-red-600 z-30"
-          : "flex justify-between items-center p-5 text-white  fixed w-full  z-30"
+          ? "flex justify-between items-center p-5 text-white sticky top-0   w-full bg-red-600"
+          : "flex justify-between items-center p-5 text-white sticky top-0   w-full  "
       }
     >
       <div className="flex gap-4 ">
