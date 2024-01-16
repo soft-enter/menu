@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+'use client'
+
 import { Menu } from "./components/Menu";
 import { Card } from "./components/Card";
-
 import { Footer } from "./components/Footer";
 
 export default function Page() {
