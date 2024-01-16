@@ -1,7 +1,9 @@
-
+import { Menu } from "../components/Menu";
 
 export default function Page() {
-    return (
-        <h1>Esta es la pagina de cartas</h1>
-    )
+  return (
+    <div>
+      <Menu showBackGround={true} />
+    </div>
+  );
 }

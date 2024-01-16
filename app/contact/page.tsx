@@ -1,28 +1,24 @@
 import "tailwindcss/tailwind.css";
 import { Menu } from "../components/Menu";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faTwitter,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+
+import { Footer } from "../components/Footer";
 
 export default function Page() {
   return (
     <>
       <div
-        className="bg-red-500"
+        // className="bg-red-500"
         style={{
-          height: "10vh",
+          height: "12vh",
         }}
       >
-        <Menu />
+        <Menu showBackGround={true} />
       </div>
       <div style={{ height: "100vh" }}>
         <div
           style={{
             position: "relative",
-            height: "99vh",
+            height: "100vh",
             backgroundImage: `url('/img/1.jpg')`,
             backgroundPosition: "center",
             backgroundSize: "cover",
@@ -122,21 +118,7 @@ export default function Page() {
           </form>
         </div>
       </div>
-      <div className="bg-red-400 grid grid-cols-1" style={{ height: "28vh" }}>
-        <div>
-          <div className="flex justify-center mt-10 mb-5">
-            <h1 className="text-5xl">Adrian Tropical</h1>
-          </div>
-          <div className="flex flex-row justify-center mb-14">
-            <FontAwesomeIcon icon={faFacebook} className="h-5 w-5" />
-            <FontAwesomeIcon icon={faTwitter} className="h-5 w-5 mx-5" />
-            <FontAwesomeIcon icon={faInstagram} className="h-5 w-5" />
-          </div>
-          <div className="flex justify-center">
-            <p>Adrian Tropical. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 }

@@ -9,30 +9,36 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-export const Menu = () => {
+export const Menu = ({ showBackGround }: { showBackGround: boolean }) => {
   return (
-    <div className="flex justify-between items-center p-5 text-white">
-      <div className="flex gap-4">
+    <div
+      className={
+        showBackGround
+          ? "flex justify-between items-center p-5 text-white fixed w-full bg-red-600 z-30"
+          : "flex justify-between items-center p-5 text-white  fixed w-full  z-30"
+      }
+    >
+      <div className="flex gap-4 ">
         <Image
-          className="rounded"
+          className="rounded  "
           src="/img/logo.jpg"
           alt="logo"
           width={50}
           height={50}
         />
-        <p className="font-bold">Adrian Tropical</p>
+        <p className="font-bold text-white ">Adrian Tropical</p>
       </div>
       <div className="flex items-center space-x-4 mr-10">
-        <Link href="/" className="hover:underline">
+        <Link href="/" className="hover:underline font-bold">
           Inicio
         </Link>
-        <Link href="/we" className="hover:underline">
+        <Link href="/we" className="hover:underline font-bold">
           Nosotros
         </Link>
-        <Link href="/card" className="hover:underline">
+        <Link href="/card" className="hover:underline font-bold">
           Carta
         </Link>
-        <Link href="/contact" className="hover:underline">
+        <Link href="/contact" className="hover:underline font-bold">
           Contacto
         </Link>
         <Link href="#facebook" className="hover:underline">
