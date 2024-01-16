@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import { useState } from "react";
 import "tailwindcss/tailwind.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,19 +28,64 @@ export const Menu = ({ showBackGround }: { showBackGround: boolean }) => {
           width={50}
           height={50}
         />
-        <p className="font-bold text-white ">Adrian Tropical</p>
+        <p className="font-bold text-white text-xl">Adrian Tropical</p>
       </div>
       <div className="flex items-center space-x-4 mr-10">
-        <Link href="/" className="hover:underline font-bold">
+        <Link href="/" className="hover:underline font-bold text-xl">
           Inicio
         </Link>
-        <Link href="/we" className="hover:underline font-bold">
+        <Link href="/we" className="hover:underline font-bold text-xl">
           Nosotros
         </Link>
-        <Link href="/card" className="hover:underline font-bold">
-          Carta
-        </Link>
-        <Link href="/contact" className="hover:underline font-bold">
+        <div className="relative hover:underline font-bold">
+          <button onMouseEnter={() => setIsOpen(true)}>
+            <Link href="/carta" className="hover:underline font-bold text-xl">
+              Carta
+            </Link>
+          </button>
+          {isOpen && (
+            <div
+              onMouseEnter={() => setIsOpen(true)}
+              onMouseLeave={() => {
+                setIsOpen(false);
+              }}
+              className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+            >
+              <div
+                className="py-1"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="options-menu"
+              >
+                <Link href="/desayuno">
+                  <p
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem"
+                  >
+                    Desayuno
+                  </p>
+                </Link>
+                <Link href="/almuerzo">
+                  <p
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem"
+                  >
+                    Almuerzo
+                  </p>
+                </Link>
+                <Link href="/cena">
+                  <p
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem"
+                  >
+                    Cena
+                  </p>
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
+        <Link href="/contact" className="hover:underline font-bold text-xl">
           Contacto
         </Link>
         <Link href="#facebook" className="hover:underline">
