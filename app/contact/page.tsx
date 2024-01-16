@@ -1,18 +1,19 @@
+"use client";
+
 import "tailwindcss/tailwind.css";
 import { Menu } from "../components/Menu";
-
 import { Footer } from "../components/Footer";
 
 export default function Page() {
   return (
     <>
       <div
-        // className="bg-red-500"
+        className="bg-red-500"
         style={{
-          height: "12vh",
+          height: "10vh",
         }}
       >
-        <Menu showBackGround={true} />
+        <Menu />
       </div>
       <div style={{ height: "100vh" }}>
         <div

@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+"use client";
+
 import { Menu } from "./components/Menu";
 import { Card } from "./components/Card";
-
 import { Footer } from "./components/Footer";
 
 export default function Page() {
@@ -17,9 +17,9 @@ export default function Page() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <Menu showBackGround={false} />
+        <Menu />
       </div>
-      <div className="grid grid-cols-1 " style={{ height: "85vh" }}>
+      <div className="grid grid-cols-1 " style={{ height: "87vh" }}>
         <div
           className="w-full md:w-auto md:mx-auto"
           style={{ marginLeft: "100px", marginRight: "100px" }}
@@ -37,8 +37,8 @@ export default function Page() {
               segura en los parqueos. O reciba una Entrega Especial en casa.
             </p>
           </div>
-          <div>
-            <h1 className=" text-4xl">Sucursales</h1>
+          <div className="flex items-center justify-center">
+            <h1 className="text-2xl">Sucursales</h1>
           </div>
           <div className="flex flex-row justify-center gap-3">
             <Card />
