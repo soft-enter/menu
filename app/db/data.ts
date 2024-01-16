@@ -1,4 +1,3 @@
-// crea una un arreglo de json con los datos de un menu de desayuno con el precio al lado
 
 export const Desayuno = [
     {
@@ -109,7 +108,6 @@ export const Desayuno = [
 
 ];
 
-// crea una un arreglo de json con los datos de un menu de almuerzo con el precio al lado
 export const Almuerzo = [
     {
         id: 1,
@@ -213,7 +211,6 @@ export const Almuerzo = [
     }
 ];
 
-// crea una un arreglo de json con los datos de un menu de cena con el precio al lado
 export const Cena = [
     {
         id: 1,

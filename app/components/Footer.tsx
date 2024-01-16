@@ -7,7 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function Footer() {
   return (
-    <div className="bg-red-400  grid grid-cols-1" style={{ height: "28vh" }}>
+    <div
+      className="mt-10 bg-red-400 grid grid-cols-1"
+      style={{ height: "28vh" }}
+    >
       <div>
         <div className="flex justify-center mt-10 mb-5">
           <h1 className="text-5xl">Adrian Tropical</h1>

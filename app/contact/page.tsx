@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import "tailwindcss/tailwind.css";
 import { Menu } from "../components/Menu";
@@ -8,8 +8,9 @@ export default function Page() {
   return (
     <>
       <div
+        className="bg-red-500"
         style={{
-          height: "12vh",
+          height: "10vh",
         }}
       >
         <Menu />

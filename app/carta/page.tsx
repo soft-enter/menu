@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu } from "../components/Menu";
 import { getBreakfast } from "../services/carta";
+
 type BreakfastItem = {
   id: number;
   name: string;
