@@ -8,12 +8,11 @@ export default function Page() {
   return (
     <>
       <div
-        // className="bg-red-500"
         style={{
           height: "12vh",
         }}
       >
-        <Menu showBackGround={true} />
+        <Menu />
       </div>
       <div style={{ height: "100vh" }}>
         <div

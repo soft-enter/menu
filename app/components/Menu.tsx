@@ -11,16 +11,11 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-export const Menu = ({ showBackGround }: { showBackGround: boolean }) => {
+export const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      className={
-        showBackGround
-          ? "flex justify-between items-center p-5 text-white fixed w-full bg-red-600 z-30"
-          : "flex justify-between items-center p-5 text-white  fixed w-full  z-30"
-      }
+    <div className="flex justify-between items-center p-5 text-white"
     >
       <div className="flex gap-4 ">
         <Image
@@ -40,7 +35,11 @@ export const Menu = ({ showBackGround }: { showBackGround: boolean }) => {
           Nosotros
         </Link>
         <div className="relative hover:underline font-bold">
-          <button onMouseEnter={() => setIsOpen(true)}>Carta</button>
+          <button onMouseEnter={() => setIsOpen(true)}>
+            <Link href="/carta" className="hover:underline font-bold">
+              Carta
+            </Link>
+          </button>
           {isOpen && (
             <div
               onMouseEnter={() => setIsOpen(true)}

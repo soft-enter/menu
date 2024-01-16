@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Menu } from "./components/Menu";
 import { Card } from "./components/Card";
@@ -17,7 +17,7 @@ export default function Page() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <Menu showBackGround={false} />
+        <Menu />
       </div>
       <div className="grid grid-cols-1 " style={{ height: "85vh" }}>
         <div
