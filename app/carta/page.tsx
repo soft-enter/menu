@@ -97,10 +97,41 @@ export default function Page() {
         />
       </div>
       <div className="flex flex-col justify-center mt-10 px-10">
-        <h1 className="text-3xl font-bold mb-5 text-center">Jugos</h1>
-        <div className="flex justify-between">
-          {[firstColumnJuices, secondColumnJuices, thirdColumnJuices].map(
-            (colum, index) => (
+        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <h1 className="text-3xl font-bold mb-5 text-center">Jugos</h1>
+          <div className="flex justify-between">
+            {[firstColumnJuices, secondColumnJuices, thirdColumnJuices].map(
+              (colum, index) => (
+                <table key={index} className="w-1/3 mt-10">
+                  <thead>
+                    <tr>
+                      <th className="text-xl font-bold pr-10 text-left">
+                        Nombre
+                      </th>
+                      <th className="text-xl font-bold text-left">Precio</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filteredJuices.map((item) => (
+                      <tr key={item.id}>
+                        <td className="text-md pr-10 font-bold py-4">
+                          {item.name}
+                        </td>
+                        <td className="py-4 text-sm">{`RD$ ${item.price}`}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )
+            )}
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col justify-center mt-10 px-10">
+        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <h1 className="text-3xl font-bold mb-5 text-center">Desayunos</h1>
+          <div className="flex justify-between">
+            {[firstColumn, secondColumn, thirdColumn].map((column, index) => (
               <table key={index} className="w-1/3 mt-10">
                 <thead>
                   <tr>
@@ -111,7 +142,7 @@ export default function Page() {
                   </tr>
                 </thead>
                 <tbody>
-                  {filteredJuices.map((item) => (
+                  {filteredBreakfast.map((item) => (
                     <tr key={item.id}>
                       <td className="text-md pr-10 font-bold py-4">
                         {item.name}
@@ -121,40 +152,19 @@ export default function Page() {
                   ))}
                 </tbody>
               </table>
-            )
-          )}
+            ))}
+          </div>
         </div>
       </div>
       <div className="flex flex-col justify-center mt-10 px-10">
-        <h1 className="text-3xl font-bold mb-5 text-center">Desayunos</h1>
-        <div className="flex justify-between">
-          {[firstColumn, secondColumn, thirdColumn].map((column, index) => (
-            <table key={index} className="w-1/3 mt-10">
-              <thead>
-                <tr>
-                  <th className="text-xl font-bold pr-10 text-left">Nombre</th>
-                  <th className="text-xl font-bold text-left">Precio</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredBreakfast.map((item) => (
-                  <tr key={item.id}>
-                    <td className="text-md pr-10 font-bold py-4">
-                      {item.name}
-                    </td>
-                    <td className="py-4 text-sm">{`RD$ ${item.price}`}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-col justify-center mt-10 px-10">
-        <h1 className="text-3xl font-bold mb-5 text-center">Almuerzo</h1>
-        <div className="flex justify-between">
-          {[firstColumnAlmuerzo, secondColumnAlmuerzo, thirdColumnAlmuerzo].map(
-            (column, index) => (
+        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <h1 className="text-3xl font-bold mb-5 text-center">Almuerzo</h1>
+          <div className="flex justify-between">
+            {[
+              firstColumnAlmuerzo,
+              secondColumnAlmuerzo,
+              thirdColumnAlmuerzo,
+            ].map((column, index) => (
               <table key={index} className="w-1/3 mt-10">
                 <thead>
                   <tr>
@@ -175,37 +185,39 @@ export default function Page() {
                   ))}
                 </tbody>
               </table>
-            )
-          )}
+            ))}
+          </div>
         </div>
       </div>
       <div className="flex flex-col justify-center mt-10 px-10">
-        <h1 className="text-3xl font-bold mb-5 text-center">Cena</h1>
-        <div className="flex justify-between">
-          {[firstColumnCena, secondColumnCena, thirdColumnCena].map(
-            (column, index) => (
-              <table key={index} className="w-1/3 mt-10">
-                <thead>
-                  <tr>
-                    <th className="text-xl font-bold pr-10 text-left">
-                      Nombre
-                    </th>
-                    <th className="text-xl font-bold text-left">Precio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredDinner.map((item) => (
-                    <tr key={item.id}>
-                      <td className="text-md pr-10 font-bold py-4">
-                        {item.name}
-                      </td>
-                      <td className="py-4 text-sm">{`RD$ ${item.price}`}</td>
+        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <h1 className="text-3xl font-bold mb-5 text-center">Cena</h1>
+          <div className="flex justify-between">
+            {[firstColumnCena, secondColumnCena, thirdColumnCena].map(
+              (column, index) => (
+                <table key={index} className="w-1/3 mt-10">
+                  <thead>
+                    <tr>
+                      <th className="text-xl font-bold pr-10 text-left">
+                        Nombre
+                      </th>
+                      <th className="text-xl font-bold text-left">Precio</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            )
-          )}
+                  </thead>
+                  <tbody>
+                    {filteredDinner.map((item) => (
+                      <tr key={item.id}>
+                        <td className="text-md pr-10 font-bold py-4">
+                          {item.name}
+                        </td>
+                        <td className="py-4 text-sm">{`RD$ ${item.price}`}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )
+            )}
+          </div>
         </div>
       </div>
     </div>
