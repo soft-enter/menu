@@ -11,11 +11,20 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-export const Menu = () => {
+export const Menu = ({
+  showBackGround = true,
+}: {
+  showBackGround: boolean;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div className="flex justify-between items-center p-5 text-white">
+    <div
+      className={
+        showBackGround
+          ? "flex justify-between items-center p-5 text-white sticky top-0   w-full bg-red-600"
+          : "flex justify-between items-center p-5 text-white sticky top-0   w-full  "
+      }
+    >
       <div className="flex gap-4 ">
         <Image
           className="rounded  "
@@ -53,7 +62,15 @@ export const Menu = () => {
                 aria-orientation="vertical"
                 aria-labelledby="options-menu"
               >
-                <Link href="/desayuno">
+                <Link href="/carta?type=jugo">
+                  <p
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem"
+                  >
+                    Jugos
+                  </p>
+                </Link>
+                <Link href="/carta?type=desayuno">
                   <p
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                     role="menuitem"
@@ -61,7 +78,7 @@ export const Menu = () => {
                     Desayuno
                   </p>
                 </Link>
-                <Link href="/almuerzo">
+                <Link href="/carta?type=almuerzo">
                   <p
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                     role="menuitem"
@@ -69,7 +86,7 @@ export const Menu = () => {
                     Almuerzo
                   </p>
                 </Link>
-                <Link href="/cena">
+                <Link href="/carta?type=cena">
                   <p
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                     role="menuitem"

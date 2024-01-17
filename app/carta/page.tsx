@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+
+import { useEffect, useRef, useState } from "react";
 import { Menu } from "../components/Menu";
 import {
   getBreakfast,
@@ -21,6 +23,22 @@ export default function Page() {
   const [isAlmuerzo, setIsAlmuerzo] = useState<Item[]>([]);
   const [isCena, setIsCena] = useState<Item[]>([]);
   const [isJuices, setIsJuices] = useState<Item[]>([]);
+
+  const params = useSearchParams();
+  const type = params.get("type");
+
+  const element = {
+    jugo: useRef<HTMLElement>(null),
+    desayuno: useRef<HTMLElement>(null),
+    almuerzo: useRef<HTMLElement>(null),
+    cena: useRef<HTMLElement>(null),
+  };
+
+  const handleScroll = (selected) => {
+    if (element[selected]) {
+      element[selected].current.scrollIntoView();
+    }
+  };
 
   //TODO: Refactoring this code letter but now is working, fix the design
   const third = Math.ceil(isBreackfast.length / 3);
@@ -55,6 +73,12 @@ export default function Page() {
     });
   }, []);
 
+  useEffect(() => {
+    if (type) {
+      handleScroll(type);
+    }
+  }, [type]);
+
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
@@ -85,7 +109,7 @@ export default function Page() {
   return (
     <div className="">
       <div className="bg-red-500">
-        <Menu />
+        <Menu showBackGround={true} />
       </div>
       <div className="flex flex-col justify-center mt-10 px-10">
         <input
@@ -96,7 +120,10 @@ export default function Page() {
           onChange={(event) => handleSearchChange(event)}
         />
       </div>
-      <div className="flex flex-col justify-center mt-10 px-10">
+      <div
+        ref={element.jugo}
+        className="flex flex-col justify-center mt-10 px-10"
+      >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <h1 className="text-3xl font-bold mb-5 text-center">Jugos</h1>
           <div className="flex justify-between">
@@ -127,7 +154,10 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center mt-10 px-10">
+      <div
+        ref={element.desayuno}
+        className="flex flex-col justify-center mt-10 px-10"
+      >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <h1 className="text-3xl font-bold mb-5 text-center">Desayunos</h1>
           <div className="flex justify-between">
@@ -156,7 +186,10 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center mt-10 px-10">
+      <div
+        ref={element.almuerzo}
+        className="flex flex-col justify-center mt-10 px-10"
+      >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <h1 className="text-3xl font-bold mb-5 text-center">Almuerzo</h1>
           <div className="flex justify-between">
@@ -189,7 +222,10 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center mt-10 px-10">
+      <div
+        ref={element.cena}
+        className="flex flex-col justify-center mt-10 px-10"
+      >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <h1 className="text-3xl font-bold mb-5 text-center">Cena</h1>
           <div className="flex justify-between">
