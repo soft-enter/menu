@@ -11,7 +11,12 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-export const Menu = ({ showBackGround }: { showBackGround: boolean }) => {
+export const Menu = ({
+  showBackGround = true,
+}: {
+  showBackGround: boolean;
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div
       className={
@@ -57,7 +62,15 @@ export const Menu = ({ showBackGround }: { showBackGround: boolean }) => {
                 aria-orientation="vertical"
                 aria-labelledby="options-menu"
               >
-                <Link href="/desayuno">
+                <Link href="/carta?type=jugo">
+                  <p
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem"
+                  >
+                    Jugos
+                  </p>
+                </Link>
+                <Link href="/carta?type=desayuno">
                   <p
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                     role="menuitem"
@@ -65,7 +78,7 @@ export const Menu = ({ showBackGround }: { showBackGround: boolean }) => {
                     Desayuno
                   </p>
                 </Link>
-                <Link href="/almuerzo">
+                <Link href="/carta?type=almuerzo">
                   <p
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                     role="menuitem"
@@ -73,7 +86,7 @@ export const Menu = ({ showBackGround }: { showBackGround: boolean }) => {
                     Almuerzo
                   </p>
                 </Link>
-                <Link href="/cena">
+                <Link href="/carta?type=cena">
                   <p
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                     role="menuitem"
