@@ -313,3 +313,106 @@ export const Cena = [
         price: 10
     }
 ];
+
+export const Bebidas = [
+    {
+        id: 1,
+        name: 'Coca cola',
+        price: 10
+    },
+    {
+        id: 2,
+        name: 'Pepsi',
+        price: 10
+    },
+    {
+        id: 3,
+        name: 'Fanta',
+        price: 10
+    },
+    {
+        id: 4,
+        name: '7up',
+        price: 10
+    },
+    {
+        id: 5,
+        name: 'Agua',
+        price: 10
+    },
+    {
+        id: 6,
+        name: 'Agua de sabor',
+        price: 10
+    },
+    {
+        id: 7,
+        name: 'Agua mineral',
+        price: 10
+    },
+    {
+        id: 8,
+        name: 'Café',
+        price: 10
+    },
+    {
+        id: 9,
+        name: 'Té',
+        price: 10
+    },
+    {
+        id: 10,
+        name: 'Jugo',
+        price: 10
+    },
+    {
+        id: 11,
+        name: 'Licuado',
+        price: 10
+    },
+    {
+        id: 12,
+        name: 'Malteada',
+        price: 10
+    },
+    {
+        id: 13,
+        name: 'Cerveza',
+        price: 10
+    },
+    {
+        id: 14,
+        name: 'Vino',
+        price: 10
+    },
+    {
+        id: 15,
+        name: 'Ron',
+        price: 10
+    },
+    {
+        id: 16,
+        name: 'Tequila',
+        price: 10
+    },
+    {
+        id: 17,
+        name: 'Whisky',
+        price: 10
+    },
+    {
+        id: 18,
+        name: 'Brandy',
+        price: 10
+    },
+    {
+        id: 19,
+        name: 'Vodka',
+        price: 10
+    },
+    {
+        id: 20,
+        name: 'Mezcal',
+        price: 10
+    }
+];
