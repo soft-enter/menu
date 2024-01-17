@@ -2,7 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { Menu } from "../components/Menu";
-import { getBreakfast, getDinner, getLunch } from "../services/carta";
+import {
+  getBreakfast,
+  getDinner,
+  getJuices,
+  getLunch,
+} from "../services/carta";
 
 type Item = {
   id: number;
@@ -11,10 +16,13 @@ type Item = {
 };
 
 export default function Page() {
+  const [searchTerm, setSearchTerm] = useState("");
   const [isBreackfast, setIsBreackfast] = useState<Item[]>([]);
   const [isAlmuerzo, setIsAlmuerzo] = useState<Item[]>([]);
   const [isCena, setIsCena] = useState<Item[]>([]);
+  const [isJuices, setIsJuices] = useState<Item[]>([]);
 
+  //TODO: Refactoring this code letter but now is working, fix the design
   const third = Math.ceil(isBreackfast.length / 3);
   const firstColumn = isBreackfast.slice(0, third);
   const secondColumn = isBreackfast.slice(third, 2 * third);
@@ -28,6 +36,10 @@ export default function Page() {
   const secondColumnCena = isCena.slice(third, 2 * third);
   const thirdColumnCena = isCena.slice(2 * third);
 
+  const firstColumnJuices = isJuices.slice(0, third);
+  const secondColumnJuices = isJuices.slice(third, 2 * third);
+  const thirdColumnJuices = isJuices.slice(2 * third);
+
   useEffect(() => {
     getBreakfast().then((data) => {
       setIsBreackfast(data);
@@ -38,12 +50,80 @@ export default function Page() {
     getDinner().then((data) => {
       setIsCena(data);
     });
+    getJuices().then((data) => {
+      setIsJuices(data);
+    });
   }, []);
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredBreakfast = isBreackfast.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.price.toString().includes(searchTerm)
+  );
+  const filteredLunch = isAlmuerzo.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.price.toString().includes(searchTerm)
+  );
+
+  const filteredDinner = isCena.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.price.toString().includes(searchTerm)
+  );
+
+  const filteredJuices = isJuices.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.price.toString().includes(searchTerm)
+  );
 
   return (
     <div className="">
       <div className="bg-red-500">
         <Menu />
+      </div>
+      <div className="flex flex-col justify-center mt-10 px-10">
+        <input
+          type="search"
+          className="mb-5 p-2 w-full"
+          placeholder="Buscar..."
+          value={searchTerm}
+          onChange={(event) => handleSearchChange(event)}
+        />
+      </div>
+      <div className="flex flex-col justify-center mt-10 px-10">
+        <h1 className="text-3xl font-bold mb-5 text-center">Jugos</h1>
+        <div className="flex justify-between">
+          {[firstColumnJuices, secondColumnJuices, thirdColumnJuices].map(
+            (colum, index) => (
+              <table key={index} className="w-1/3 mt-10">
+                <thead>
+                  <tr>
+                    <th className="text-xl font-bold pr-10 text-left">
+                      Nombre
+                    </th>
+                    <th className="text-xl font-bold text-left">Precio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredJuices.map((item) => (
+                    <tr key={item.id}>
+                      <td className="text-md pr-10 font-bold py-4">
+                        {item.name}
+                      </td>
+                      <td className="py-4 text-sm">{`RD$ ${item.price}`}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )
+          )}
+        </div>
       </div>
       <div className="flex flex-col justify-center mt-10 px-10">
         <h1 className="text-3xl font-bold mb-5 text-center">Desayunos</h1>
@@ -57,7 +137,7 @@ export default function Page() {
                 </tr>
               </thead>
               <tbody>
-                {column.map((item) => (
+                {filteredBreakfast.map((item) => (
                   <tr key={item.id}>
                     <td className="text-md pr-10 font-bold py-4">
                       {item.name}
@@ -85,7 +165,7 @@ export default function Page() {
                   </tr>
                 </thead>
                 <tbody>
-                  {column.map((item) => (
+                  {filteredLunch.map((item) => (
                     <tr key={item.id}>
                       <td className="text-md pr-10 font-bold py-4">
                         {item.name}
@@ -114,7 +194,7 @@ export default function Page() {
                   </tr>
                 </thead>
                 <tbody>
-                  {column.map((item) => (
+                  {filteredDinner.map((item) => (
                     <tr key={item.id}>
                       <td className="text-md pr-10 font-bold py-4">
                         {item.name}
