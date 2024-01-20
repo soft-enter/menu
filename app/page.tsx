@@ -3,6 +3,7 @@
 import { Menu } from "./components/Menu";
 import { Card } from "./components/Card";
 import { Footer } from "./components/Footer";
+import { Whatsapp } from "./components/Whatsapp";
 
 export default function Page() {
   return (
@@ -17,7 +18,7 @@ export default function Page() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <Menu />
+        <Menu showBackGround={false} />
       </div>
       <div className="grid grid-cols-1 " style={{ height: "87vh" }}>
         <div
@@ -49,6 +50,7 @@ export default function Page() {
         </div>
         <Footer />
       </div>
+      <Whatsapp />
     </div>
   );
 }

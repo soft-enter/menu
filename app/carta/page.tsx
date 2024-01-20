@@ -10,6 +10,7 @@ import {
   getJuices,
   getLunch,
 } from "../services/carta";
+import { Whatsapp } from "../components/Whatsapp";
 
 type Item = {
   id: number;
@@ -256,6 +257,7 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <Whatsapp />
     </div>
   );
 }

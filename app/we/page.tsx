@@ -6,6 +6,7 @@ import Logo from "@/public/img/logo.jpg";
 import { Footer } from "../components/Footer";
 
 import { RestaurantCard } from "../components/RestaurantCard";
+import { Whatsapp } from "../components/Whatsapp";
 
 export default function Page() {
   return (
@@ -68,6 +69,7 @@ export default function Page() {
         </div>
       </div>
       <Footer />
+      <Whatsapp />
     </div>
   );
 }

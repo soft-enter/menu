@@ -17,6 +17,7 @@ export const Menu = ({
   showBackGround: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div
       className={
@@ -36,7 +37,7 @@ export const Menu = ({
         <p className="font-bold text-white text-xl">Adrian Tropical</p>
       </div>
       <div className="flex items-center space-x-4 mr-10">
-        <Link href="/" className="hover:underline font-bold text-xl">
+        <Link href="/" className="hover:underline font-bold text-xl ">
           Inicio
         </Link>
         <Link href="/we" className="hover:underline font-bold text-xl">
@@ -114,3 +115,6 @@ export const Menu = ({
     </div>
   );
 };
+
+//https://web.whatsapp.com/send?phone=18299688068
+//&text=%C2%A1Hola!%20Vengo%20desde%20la%20web%20de%20BoxPaq.%20Mi%20nombre%20es

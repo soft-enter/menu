@@ -3,6 +3,7 @@
 import "tailwindcss/tailwind.css";
 import { Menu } from "../components/Menu";
 import { Footer } from "../components/Footer";
+import { Whatsapp } from "../components/Whatsapp";
 
 export default function Page() {
   return (
@@ -10,10 +11,10 @@ export default function Page() {
       <div
         className="bg-red-500"
         style={{
-          height: "10vh",
+          height: "100%",
         }}
       >
-        <Menu />
+        <Menu showBackGround={true} />
       </div>
       <div style={{ height: "100vh" }}>
         <div
@@ -120,6 +121,7 @@ export default function Page() {
         </div>
       </div>
       <Footer />
+      <Whatsapp />
     </>
   );
 }
