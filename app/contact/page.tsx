@@ -29,16 +29,16 @@ export default function Page() {
         ></div>
       </div>
 
-      <div className="grid grid-cols-2 mt-10 " style={{ height: "60vh" }}>
-        <div className="ml-20 ">
+      <div className=" flex justify-center   mt-10 ">
+        <div className="ml-20 w-1/3 lg:w-1/2 ">
           <p className=" text-2xl">
             Gracias por permitirnos servirles con el sabor de la cocina
             dominicana. Déjenos saber cualquier sugerencia, duda o comentario
             que tenga. Estamos para servirle.
           </p>
         </div>
-        <div className="">
-          <form className="ml-24 max-w-sm">
+        <div className="w-2/3 lg:w-1/2   ">
+          <form style={{ margin: "0 auto" }} className="w-1/2 lg:w-2/3">
             <div className="md:flex md:items-center mb-6">
               <div className="md:w-1/3">
                 <label

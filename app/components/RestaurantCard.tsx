@@ -5,7 +5,7 @@ import Start from "@/public/img/start.jpeg";
 
 export function RestaurantCard() {
   return (
-    <div className=" w-48 mt-2 ">
+    <div className=" w-3/4 md:w-48 mt-2 ">
       <Section>
         <div className="h-full">
           <Image

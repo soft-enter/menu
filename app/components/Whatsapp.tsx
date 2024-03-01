@@ -14,7 +14,7 @@ export function Whatsapp() {
     >
       <div className="flex w-full justify-center items-center ">
         <FontAwesomeIcon icon={faWhatsapp} />
-        <p className="ms-2"> Whatsapp</p>
+        <p className="ms-2"> Escribenos!</p>
       </div>
     </button>
   );

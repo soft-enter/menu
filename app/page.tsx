@@ -20,9 +20,9 @@ export default function Page() {
       >
         <Menu showBackGround={false} />
       </div>
-      <div className="grid grid-cols-1 " style={{ height: "87vh" }}>
+      <div className="grid grid-cols-1 ">
         <div
-          className="w-full md:w-auto md:mx-auto"
+          className=" md:w-auto md:mx-auto"
           style={{ marginLeft: "100px", marginRight: "100px" }}
         >
           <div className="w-full mb-10 mt-20 flex items-center justify-center">
@@ -31,17 +31,17 @@ export default function Page() {
           <div>
             <hr className="border-1 border-gray-800" />
           </div>
-          <div className="mx-64 my-10">
-            <p className="text-2xl">
+          <div className=" my-4  lg:mx-64 lg:my-10">
+            <p className=" text-center text-2xl">
               Visítenos para desayunar, almorzar y cenar en los restaurantes.
               Ordene vía telefónica al 809-565-9236 y retire su pedido de forma
               segura en los parqueos. O reciba una Entrega Especial en casa.
             </p>
           </div>
-          <div className="flex items-center justify-center">
-            <h1 className="text-2xl">Sucursales</h1>
+          <div className="">
+            <h1 className="text-2xl text-center">Sucursales</h1>
           </div>
-          <div className="flex flex-row justify-center gap-3">
+          <div className=" grid grid-cols-2 lg:grid-cols-4 ">
             <Card />
             <Card />
             <Card />

@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <div className=" flex-col ">
       <Menu showBackGround={true} />
-      <div className=" mt-8 w-full px-11 h-44 ">
+      <div className=" mt-8 w-full px-11 ">
         <Section>
           <div className="flex flex-row-reverse gap-6 ">
             <div className="">
@@ -36,7 +36,7 @@ export default function Page() {
           </div>
         </Section>
       </div>
-      <div className=" mt-8 w-full px-11 h-44 ">
+      <div className=" mt-8 w-full px-11 ">
         <Section>
           <div className="flex flex-row-reverse gap-6 ">
             <div className="">
@@ -60,9 +60,9 @@ export default function Page() {
           </div>
         </Section>
       </div>
-      <div className="mt-6 w-full px-11 mb-11 ">
+      <div className=" px-0 mt-6 w-full md:px-11 mb-11 ">
         <h2 className="text-4xl text-center ">Restaurantes</h2>
-        <div className="flex items-center justify-center gap-9 ">
+        <div className=" flex flex-col  content-center md:flex-row   items-center md:justify-center gap-9 ">
           <RestaurantCard />
           <RestaurantCard />
           <RestaurantCard />
